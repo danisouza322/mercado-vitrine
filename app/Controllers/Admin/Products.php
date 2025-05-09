@@ -64,6 +64,7 @@ class Products extends BaseController
         // Preparar dados do produto
         $productData = [
             'name' => $this->request->getPost('name'),
+            'slug' => url_title($this->request->getPost('name'), '-', true),
             'price' => $this->request->getPost('price'),
             'sale_price' => $this->request->getPost('sale_price') ?: null,
             'description' => $this->request->getPost('description'),
@@ -161,6 +162,7 @@ class Products extends BaseController
         // Preparar dados do produto
         $productData = [
             'name' => $this->request->getPost('name'),
+            'slug' => url_title($this->request->getPost('name'), '-', true),
             'price' => $this->request->getPost('price'),
             'sale_price' => $this->request->getPost('sale_price') ?: null,
             'description' => $this->request->getPost('description'),

@@ -55,6 +55,7 @@ class Categories extends BaseController
         // Preparar dados da categoria
         $data = [
             'name' => $this->request->getPost('name'),
+            'slug' => url_title($this->request->getPost('name'), '-', true),
             'description' => $this->request->getPost('description'),
             'parent_id' => $this->request->getPost('parent_id') ?: null,
             'status' => $this->request->getPost('status') ? 1 : 0,
@@ -128,6 +129,7 @@ class Categories extends BaseController
         // Preparar dados da categoria
         $data = [
             'name' => $this->request->getPost('name'),
+            'slug' => url_title($this->request->getPost('name'), '-', true),
             'description' => $this->request->getPost('description'),
             'parent_id' => $parentId ?: null,
             'status' => $this->request->getPost('status') ? 1 : 0,

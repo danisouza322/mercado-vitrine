@@ -36,34 +36,60 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-4">
-                                <label for="store_name" class="form-label">Nome da Loja</label>
-                                <input type="text" class="form-control" id="store_name" name="store_name" value="<?= $settings['store_name'] ?? '' ?>">
+                                <label for="shop_name" class="form-label">Nome da Loja</label>
+                                <input type="text" class="form-control" id="shop_name" name="shop_name" value="<?= $settings['shop_name'] ?? '' ?>">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-4">
-                                <label for="store_description" class="form-label">Descrição da Loja</label>
-                                <textarea class="form-control" id="store_description" name="store_description" rows="1"><?= $settings['store_description'] ?? '' ?></textarea>
+                                <label for="shop_description" class="form-label">Descrição da Loja</label>
+                                <textarea class="form-control" id="shop_description" name="shop_description" rows="1"><?= $settings['shop_description'] ?? '' ?></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mb-4">
-                                <label for="company_address" class="form-label">Endereço</label>
-                                <input type="text" class="form-control" id="company_address" name="company_address" value="<?= $settings['company_address'] ?? '' ?>">
+                                <label for="shop_address" class="form-label">Endereço</label>
+                                <input type="text" class="form-control" id="shop_address" name="shop_address" value="<?= $settings['shop_address'] ?? '' ?>">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-4">
-                                <label for="company_phone" class="form-label">Telefone</label>
-                                <input type="text" class="form-control" id="company_phone" name="company_phone" value="<?= $settings['company_phone'] ?? '' ?>">
+                                <label for="shop_phone" class="form-label">Telefone</label>
+                                <input type="text" class="form-control" id="shop_phone" name="shop_phone" value="<?= $settings['shop_phone'] ?? '' ?>">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-4">
-                                <label for="company_email" class="form-label">E-mail</label>
-                                <input type="email" class="form-control" id="company_email" name="company_email" value="<?= $settings['company_email'] ?? '' ?>">
+                                <label for="shop_email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="shop_email" name="shop_email" value="<?= $settings['shop_email'] ?? '' ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="mb-4">
+                                <label for="shop_city" class="form-label">Cidade</label>
+                                <input type="text" class="form-control" id="shop_city" name="shop_city" value="<?= $settings['shop_city'] ?? '' ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-4">
+                                <label for="shop_state" class="form-label">Estado</label>
+                                <input type="text" class="form-control" id="shop_state" name="shop_state" value="<?= $settings['shop_state'] ?? '' ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-4">
+                                <label for="shop_zip" class="form-label">CEP</label>
+                                <input type="text" class="form-control" id="shop_zip" name="shop_zip" value="<?= $settings['shop_zip'] ?? '' ?>">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-4">
+                                <label for="shop_country" class="form-label">País</label>
+                                <input type="text" class="form-control" id="shop_country" name="shop_country" value="<?= $settings['shop_country'] ?? 'Brasil' ?>">
                             </div>
                         </div>
                     </div>
@@ -74,26 +100,45 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-4">
-                                <label for="logo" class="form-label">Logo da Loja</label>
-                                <?php if (isset($settings['logo']) && !empty($settings['logo'])): ?>
+                                <label for="shop_logo" class="form-label">Logo da Loja</label>
+                                <?php if (isset($settings['shop_logo']) && !empty($settings['shop_logo'])): ?>
                                     <div class="mb-2">
-                                        <img src="<?= base_url($settings['logo']) ?>" alt="Logo" class="img-thumbnail" style="max-height: 100px;">
+                                        <img src="<?= base_url($settings['shop_logo']) ?>" alt="Logo" class="img-thumbnail" style="max-height: 100px;">
                                     </div>
                                 <?php endif; ?>
-                                <input type="file" class="form-control" id="logo" name="logo">
+                                <input type="file" class="form-control" id="shop_logo" name="shop_logo">
                                 <small class="text-muted">Recomendado: 200x60px, PNG transparente</small>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-4">
-                                <label for="favicon" class="form-label">Favicon</label>
-                                <?php if (isset($settings['favicon']) && !empty($settings['favicon'])): ?>
+                                <label for="shop_favicon" class="form-label">Favicon</label>
+                                <?php if (isset($settings['shop_favicon']) && !empty($settings['shop_favicon'])): ?>
                                     <div class="mb-2">
-                                        <img src="<?= base_url($settings['favicon']) ?>" alt="Favicon" class="img-thumbnail" style="max-height: 60px;">
+                                        <img src="<?= base_url($settings['shop_favicon']) ?>" alt="Favicon" class="img-thumbnail" style="max-height: 60px;">
                                     </div>
                                 <?php endif; ?>
-                                <input type="file" class="form-control" id="favicon" name="favicon">
+                                <input type="file" class="form-control" id="shop_favicon" name="shop_favicon">
                                 <small class="text-muted">Recomendado: 32x32px, formato ICO, PNG</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 mt-4">
+                        <h5>Contato e WhatsApp</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="shop_whatsapp" class="form-label">WhatsApp</label>
+                                <input type="text" class="form-control" id="shop_whatsapp" name="shop_whatsapp" value="<?= $settings['shop_whatsapp'] ?? '' ?>" placeholder="Ex: 5511999999999">
+                                <small class="text-muted">Formato internacional com código do país (Ex: 5511999999999)</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <label for="whatsapp_default_message" class="form-label">Mensagem padrão do WhatsApp</label>
+                                <textarea class="form-control" id="whatsapp_default_message" name="whatsapp_default_message" rows="2"><?= $settings['whatsapp_default_message'] ?? 'Olá! Estou interessado no produto:' ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -104,52 +149,26 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="mb-4">
-                                <label for="facebook_link" class="form-label">Facebook</label>
-                                <input type="text" class="form-control" id="facebook_link" name="facebook_link" value="<?= $settings['facebook_link'] ?? '' ?>" placeholder="URL do Facebook">
+                                <label for="shop_facebook" class="form-label">Facebook</label>
+                                <input type="text" class="form-control" id="shop_facebook" name="shop_facebook" value="<?= $settings['shop_facebook'] ?? '' ?>" placeholder="URL do Facebook">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="mb-4">
-                                <label for="instagram_link" class="form-label">Instagram</label>
-                                <input type="text" class="form-control" id="instagram_link" name="instagram_link" value="<?= $settings['instagram_link'] ?? '' ?>" placeholder="URL do Instagram">
+                                <label for="shop_instagram" class="form-label">Instagram</label>
+                                <input type="text" class="form-control" id="shop_instagram" name="shop_instagram" value="<?= $settings['shop_instagram'] ?? '' ?>" placeholder="URL do Instagram">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="mb-4">
-                                <label for="twitter_link" class="form-label">Twitter</label>
-                                <input type="text" class="form-control" id="twitter_link" name="twitter_link" value="<?= $settings['twitter_link'] ?? '' ?>" placeholder="URL do Twitter">
+                                <label for="shop_twitter" class="form-label">Twitter</label>
+                                <input type="text" class="form-control" id="shop_twitter" name="shop_twitter" value="<?= $settings['shop_twitter'] ?? '' ?>" placeholder="URL do Twitter">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="mb-4">
-                                <label for="whatsapp_number" class="form-label">WhatsApp</label>
-                                <input type="text" class="form-control" id="whatsapp_number" name="whatsapp_number" value="<?= $settings['whatsapp_number'] ?? '' ?>" placeholder="Ex: 5511999999999">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="mb-4">
-                                <label for="whatsapp_message" class="form-label">Mensagem padrão do WhatsApp</label>
-                                <textarea class="form-control" id="whatsapp_message" name="whatsapp_message" rows="2"><?= $settings['whatsapp_message'] ?? 'Olá! Estou interessado em seus produtos.' ?></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-4 mt-4">
-                        <h5>SEO e Metadados</h5>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-4">
-                                <label for="meta_title" class="form-label">Título da Página (Meta Title)</label>
-                                <input type="text" class="form-control" id="meta_title" name="meta_title" value="<?= $settings['meta_title'] ?? '' ?>">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-4">
-                                <label for="meta_description" class="form-label">Descrição da Página (Meta Description)</label>
-                                <textarea class="form-control" id="meta_description" name="meta_description" rows="1"><?= $settings['meta_description'] ?? '' ?></textarea>
+                                <label for="shop_youtube" class="form-label">YouTube</label>
+                                <input type="text" class="form-control" id="shop_youtube" name="shop_youtube" value="<?= $settings['shop_youtube'] ?? '' ?>" placeholder="URL do YouTube">
                             </div>
                         </div>
                     </div>
@@ -160,14 +179,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-4">
-                                <label for="currency_symbol" class="form-label">Símbolo da Moeda</label>
-                                <input type="text" class="form-control" id="currency_symbol" name="currency_symbol" value="<?= $settings['currency_symbol'] ?? 'R$' ?>">
+                                <label for="shop_currency_symbol" class="form-label">Símbolo da Moeda</label>
+                                <input type="text" class="form-control" id="shop_currency_symbol" name="shop_currency_symbol" value="<?= $settings['shop_currency_symbol'] ?? 'R$' ?>">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-4">
-                                <label for="currency_code" class="form-label">Código da Moeda</label>
-                                <input type="text" class="form-control" id="currency_code" name="currency_code" value="<?= $settings['currency_code'] ?? 'BRL' ?>">
+                                <label for="shop_currency" class="form-label">Código da Moeda</label>
+                                <input type="text" class="form-control" id="shop_currency" name="shop_currency" value="<?= $settings['shop_currency'] ?? 'BRL' ?>">
                             </div>
                         </div>
                     </div>

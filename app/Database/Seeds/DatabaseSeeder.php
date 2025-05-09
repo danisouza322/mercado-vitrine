@@ -11,6 +11,9 @@ class DatabaseSeeder extends Seeder
         // Executar AdminSeeder
         $this->call('AdminSeeder');
         
+        // Executar ShopSettingSeeder
+        $this->call('ShopSettingSeeder');
+        
         // Log de confirmação
         echo "Todos os seeders foram executados com sucesso!\n";
     }

@@ -105,6 +105,10 @@ $routes->group('admin', ['filter' => 'admin'], function($routes) {
     $routes->get('profile', 'Admin\Profile::index');
     $routes->post('profile/update', 'Admin\Profile::update');
     
+    // Settings
+    $routes->get('settings', 'Admin\Settings::index');
+    $routes->post('settings/update', 'Admin\Settings::update');
+    
     // Blank page
     $routes->get('blank', 'Admin::blank');
 });
